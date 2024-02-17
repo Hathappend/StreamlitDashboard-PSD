@@ -33,8 +33,6 @@ def udaraBuruk(allData):
             rekapstation[data] += 1
         else:
             rekapstation[data] = 1
-    
-    #membagi dua kolom
 
     #Memanggil 5 Station Terburuk
     df_rekapstation = pd.DataFrame(rekapstation.values(), index = rekapstation.keys())
@@ -46,8 +44,6 @@ def udaraBuruk(allData):
     data_udara_buruk = pd.DataFrame({
         'Jumlah': stationburuk[0]
     })
-        
-    # st.dataframe(data_udara_buruk)
 
     #Menampilkan Pie Chart
     col1, col2 = st.columns([3,1])
@@ -114,7 +110,7 @@ def partikel_berpengaruh(allData):
     stations = dataUdaraBuruk['station'].unique()
     polutans = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
     tahun = [2013, 2014, 2015, 2016, 2017]
-# for station in stations:
+
     getStation = dataUdaraBuruk[dataUdaraBuruk['station'] == station]
     getStation.set_index('year')
 
@@ -631,6 +627,7 @@ if (selected == 'Beranda') :
             </div>
             ''', 
             unsafe_allow_html=True)
+            
 elif(selected == "Udara Buruk"):
     st.header("5 Stasiun yang Sering Terjadi Udara Terburuk")
     st.write('by : 10122027 - Bambang Firman Fatoni')
